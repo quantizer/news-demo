@@ -1,9 +1,9 @@
 index:
     path: /
-    controller: App\Controller\NewsController::listAction
+    controller: App\Controller\NewsController::list
 
 article_item:
     path: /article/{article}
-    controller: App\Controller\NewsController::itemAction
+    controller: App\Controller\NewsController::item
     requirements:
         article: \d+

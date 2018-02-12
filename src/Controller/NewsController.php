@@ -19,7 +19,7 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function listAction(): Response
+    public function list(): Response
     {
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
@@ -39,7 +39,7 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function itemAction(Article $article)
+    public function item(Article $article)
     {
         return $this->render(
             'item.html.twig',

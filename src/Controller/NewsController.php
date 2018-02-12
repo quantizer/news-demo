@@ -7,6 +7,11 @@ use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class NewsController
+ *
+ * @package App\Controller
+ */
 class NewsController extends Controller
 {
     /**
@@ -23,6 +28,23 @@ class NewsController extends Controller
             'list.html.twig',
             [
                 'articles' => $articleRepository->findAllPublished(),
+            ]
+        );
+    }
+
+    /**
+     * Show article page.
+     *
+     * @param Article $article
+     *
+     * @return Response
+     */
+    public function itemAction(Article $article)
+    {
+        return $this->render(
+            'item.html.twig',
+            [
+                'article' => $article,
             ]
         );
     }
